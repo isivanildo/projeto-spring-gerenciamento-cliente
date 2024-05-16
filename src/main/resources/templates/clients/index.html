@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belémtech - Cliente</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+</head>
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong>Belém Tech</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#">Cliente</a></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <h1>Lista de Clientes</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Telefone</th>
+                </tr>
+                <tbody>
+                    <tr th:each="clients : ${clients}">
+                        <th scope="row" th:text="${clients.id}"></th>
+                        <td th:text="${clients.name}"></td>
+                        <td th:text="${clients.email}"></td>
+                        <td th:text="${clients.phone}"></td>
+                    </tr>
+                </tbody>
+            </thead>
+        </table>
+    </main>
+</body>
+</html>
