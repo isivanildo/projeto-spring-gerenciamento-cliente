@@ -1,6 +1,7 @@
 package br.com.belemtech.btprojects.web.client.dtos;
 
 import br.com.belemtech.btprojects.core.models.Client;
+import br.com.belemtech.btprojects.core.utils.StringUtils;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,7 +19,7 @@ public class ClientViewModel {
     private String phone;
 
     public String getPhone() {
-        return phone.replaceAll("(\\d{2})(\\d{5})(\\d{4})", "($1) $2-$3");
+        return StringUtils.formatPhone((phone));
     }
 
     public static ClientViewModel of(Client client) {
